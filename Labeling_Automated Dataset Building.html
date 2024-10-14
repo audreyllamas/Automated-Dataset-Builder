@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Dataset Builder - Labeling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Dataset Builder for Filipino Sign Language Recognition</h1>
+        <nav>
+            <ul>
+                <li><a href="Sample_Automated Dataset Building.html">Samples</a></li>
+                <li><a href="Labeling_Automated Dataset Building.html">Labeling</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+    <main>
+        <section id="labeling">
+            <h2>Labeling</h2>
+
+            <div class="input-section">
+                <h3>Extract Features</h3>
+                <button onclick="extractFeatures()">Extract Features</button>
+                <div id="featureLogs">Feature extraction logs will be displayed here.</div>
+            </div>
+
+            <div class="input-section">
+                <h3>Select Model</h3>
+                <select id="modelSelect">
+                    <option value="svm">SVM</option>
+                    <option value="co-training">Co-Training (SVM + KNN)</option>
+                </select>
+            </div>
+
+            <div class="input-section">
+                <h3>Confidence Threshold</h3>
+                <input type="range" id="confidenceThreshold" min="0" max="1" step="0.1" value="0.7">
+                <label for="confidenceThreshold">Confidence: <span id="confidenceValue">0.7</span></label>
+            </div>
+
+            <div class="input-section">
+                <h3>Logs for Labeling Process</h3>
+                <div id="labelingLogs">Labeling logs will be displayed here.</div>
+            </div>
+
+            <div class="input-section">
+                <button onclick="saveLabeledDataset()">Save Labeled Dataset</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Automated Dataset Builder</p>
+    </footer>
+
+    <script>
+        function extractFeatures() {
+            document.getElementById('featureLogs').innerText = 'Extracting features...';
+        }
+
+        document.getElementById('confidenceThreshold').addEventListener('input', function () {
+            document.getElementById('confidenceValue').innerText = this.value;
+        });
+
+        function saveLabeledDataset() {
+            alert('Dataset saved!');
+        }
+    </script>
+</body>
+</html>

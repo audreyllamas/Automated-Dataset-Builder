@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Dataset Builder - Samples</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Automated Dataset Builder for Filipino Sign Language Recognition</h1>
+        <nav>
+            <ul>
+                <li><a href="Sample_Automated Dataset Building.html">Samples</a></li>
+                <li><a href="Labeling_Automated Dataset Building.html">Labeling</a></li>
+            </ul> 
+        </nav>
+    </header>
+
+    <main>
+        <section id="samples">
+            <h2>Samples</h2>
+
+            <div class="input-section">
+                <h3>Upload CSV File of Labeled Dataset</h3>
+                <input type="file" id="csvUpload">
+                <p id="fileStatus">No file uploaded yet.</p>
+            </div>
+
+            <div class="input-section">
+                <button onclick="startScraping()">Start Web Scraping</button>
+                <div id="scrapingLogs">Scraping logs will be displayed here.</div>
+            </div>
+
+            <div class="input-section">
+                <h3>Manual Entry</h3>
+                <input type="text" id="filePath" placeholder="Enter File Path">
+                <button onclick="submitFilePath()">Submit File Path</button>
+                <div id="filePathLogs">Manual entry logs will be displayed here.</div>
+            </div>
+
+            <div class="input-section">
+                <h3>View Samples</h3>
+                <button onclick="viewSamples()">View Dataset Samples</button>
+                <table id="samplesTable">
+                    <thead>
+                        <tr>
+                            <th>Sign Name</th>
+                            <th>Video Path</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="input-section">
+                <h3>Summary</h3>
+                <button onclick="showSummary()">Show Summary</button>
+                <div id="summary">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Automated Dataset Builder</p>
+    </footer>
+
+    <script>
+        function startScraping() {
+            document.getElementById('scrapingLogs').innerText = 'Scraping in progress...';
+        }
+
+        function submitFilePath() {
+            document.getElementById('filePathLogs').innerText = 'File path submitted!';
+        }
+
+        function viewSamples() {
+        }
+
+        function showSummary() {
+            document.getElementById('summary').innerText = 'Summary will be displayed here.';
+        }
+    </script>
+</body>
+</html>
